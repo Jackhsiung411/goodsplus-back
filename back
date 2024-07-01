@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <base href="https://www.goodsplus.net/admin">
+  <meta name="csrf-token" content="znrLIQJJVFkZ8Tg4Kx7dIGkYRPh0P4YNeFwpie3E">
+  <meta name="asset" content="https://www.goodsplus.net/">
+  <meta name="editor_language" content="zh_cn">
+  <script src="https://www.goodsplus.net/vendor/vue/2.7/vue.min.js"></script>
+  <script src="https://www.goodsplus.net/vendor/element-ui/index.js"></script>
+  <script src="https://www.goodsplus.net/vendor/jquery/jquery-3.6.0.min.js"></script>
+  <script src="https://www.goodsplus.net/vendor/layer/3.5.1/layer.js"></script>
+  <script src="https://www.goodsplus.net/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.goodsplus.net/vendor/cookie/js.cookie.min.js"></script>
+  <link href="/build/beike/admin/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.goodsplus.net/vendor/element-ui/index.css">
+    <link rel="shortcut icon" href="https://www.goodsplus.net/upload/avatar/vNK33JlB8FYOGI97BCIEPI2T7JozvWllRiPojwee.png">
+  <link href="/build/beike/admin/css/app.css" rel="stylesheet">
+  <script src="/build/beike/admin/js/app.js"></script>
+  <title>BeikeShop - 后台管理</title>
+    <script src="https://www.goodsplus.net/vendor/chart/chart.min.js"></script>
+  
+</head>
+
+<body class="admin-home zh_cn">
+  <div class="header-content d-none d-lg-block">
+  <div class="header-wrap">
+    <div class="header-left">
+      <div class="logo">
+        <a href=""><img src="https://www.goodsplus.net/image/logo.png" class="img-fluid"></a>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-wrap">
+        <div class="input-wrap">
+          <div class="search-icon"><i class="bi bi-search"></i></div>
+          <input type="text" id="header-search-input" autocomplete="off" class="form-control" placeholder="搜索后台功能">
+          <button class="btn close-icon" type="button"><i class="bi bi-x-lg"></i></button>
+        </div>
+
+        <div class="dropdown-menu">
+          <div class="search-ing"><i class="el-icon-loading"></i></div>
+          <div class="dropdown-search">
+            <div class="dropdown-header fw-bold">搜索结果</div>
+            <div class="common-links"></div>
+            <div class="header-search-no-data"><i class="bi bi-file-earmark"></i> 暂无数据～</div>
+          </div>
+          <div class="dropdown-wrap">
+                          <div class="link-item recent-search">
+                <div class="dropdown-header fw-bold mb-2">最近访问</div>
+                <div class="recent-search-links">
+                                      <a href="https://www.goodsplus.net/admin"><i class="bi bi-search"></i> 首页</a>
+                                  </div>
+              </div>
+                        <div class="link-item">
+              <div class="dropdown-header fw-bold">常用链接</div>
+              <div class="common-links">
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/design/builder" target="_blank">
+                    <span><i class="bi bi-palette"></i></span> 首页装修
+                  </a>
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/design_footer/builder" target="_blank">
+                    <span><i class="bi bi-palette"></i></span> 页尾装修
+                  </a>
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/design_menu/builder" target="_self">
+                    <span><i class="bi bi-list"></i></span> 导航配置
+                  </a>
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/languages" target="_self">
+                    <span><i class="bi bi-globe2"></i></span> 语言管理
+                  </a>
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/currencies" target="_self">
+                    <span><i class="bi bi-currency-dollar"></i></span> 货币管理
+                  </a>
+                                  <a class="dropdown-item" href="https://www.goodsplus.net/admin/plugins" target="_self">
+                    <span><i class="bi bi-plug"></i></span> 插件设置
+                  </a>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar navbar-right">
+        
+                 <li class="nav-item">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">简体中文</a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=de" class="dropdown-item">Deutsch</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=en" class="dropdown-item">English</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=es" class="dropdown-item">Espanol</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=fr" class="dropdown-item">French</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=id" class="dropdown-item">Indonesia</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=it" class="dropdown-item">Italiano</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=ja" class="dropdown-item">Japanese</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=ko" class="dropdown-item">간체 중문</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=ru" class="dropdown-item">Русский</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=zh_cn" class="dropdown-item">简体中文</a></li>
+                            <li><a href="https://www.goodsplus.net/admin/edit/locale?locale=zh_hk" class="dropdown-item">繁体中文</a></li>
+                          </ul>
+          </div>
+        </li>
+         
+                 <li class="nav-item me-3">
+          <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              <span class="ml-2">admin</span>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+              <li>
+                <a target="_blank" href="https://www.goodsplus.net" class="dropdown-item py-2">
+                  <i class="bi bi-send me-1"></i> 访问前台
+                </a>
+              </li>
+              <li>
+                <a href="https://www.goodsplus.net/admin/account" class="dropdown-item py-2">
+                  <i class="bi bi-person-circle me-1"></i> 个人中心
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a href="https://www.goodsplus.net/admin/logout" class="dropdown-item py-2">
+                  <i class="bi bi-box-arrow-left me-1"></i> 退出登录
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+               </ul>
+    </div>
+  </div>
+</div>
+
+<div class="header-mobile d-lg-none">
+  <div class="header-mobile-wrap">
+    <div class="header-mobile-left">
+      <div class="mobile-open-menu"><i class="bi bi-list"></i></div>
+    </div>
+    <div class="logo">
+      <a href=""><img src="https://www.goodsplus.net/image/logo.png" class="img-fluid"></a>
+    </div>
+    <div class="header-mobile-right">
+      <div class="mobile-to-front">
+        <a target="_blank" href="https://www.goodsplus.net" class="nav-divnk"><i class="bi bi-send"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="update-pop p-3" style="display: none">
+  <div class="mb-4 fs-5 fw-bold text-center">发现新的BeikeShop版本，是否立即更新</div>
+  <div class="py-3 px-4 bg-light mx-3 lh-lg mb-4">
+    <div>最新版本：<span class="new-version fs-5 fw-bold text-success"></span></div>
+    <div>当前版本：<span class="fs-5">1.5.3</span></div>
+    <div>更新日期：<span class="update-date fs-5"></span></div>
+  </div>
+
+  <div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-outline-secondary me-3 ">取消</button>
+    <a href="https://beikeshop.com/download" target="_blank" class="btn btn-primary">前往下载</a>
+  </div>
+</div>
+
+  <div class="main-content">
+    <aside class="sidebar-box navbar-expand-xs border-radius-xl">
+  <div class="sidebar-info">
+    <div class="left">
+      <ul class="list-unstyled navbar-nav">
+                <li class="nav-item active">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin">
+            <i class="bi bi-house"></i> <span>首页</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/orders">
+            <i class="bi bi-clipboard-check"></i> <span>订单</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/products">
+            <i class="bi bi-box-seam"></i> <span>商品</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/customers">
+            <i class="bi bi-person-circle"></i> <span>客户</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/pages">
+            <i class="bi bi-file-earmark-text"></i> <span>文章</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/reports/sale">
+            <i class="bi bi-bar-chart-line"></i> <span>报表</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/themes">
+            <i class="bi bi-palette"></i> <span>设计</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/plugins">
+            <i class="bi bi-shop"></i> <span>插件</span>
+          </a>
+        </li>
+                <li class="nav-item ">
+          <a target="_self" class="nav-link" href="https://www.goodsplus.net/admin/settings">
+            <i class="bi bi-gear"></i> <span>系统</span>
+          </a>
+        </li>
+              </ul>
+    </div>
+
+      </div>
+</aside>
+
+    <div id="content">
+      <div class="page-title-box py-1 d-flex align-items-center justify-content-between">
+        <div class="d-flex">
+          <h5 class="page-title">后台管理</h5>
+          <div class="ms-4 text-danger"></div>
+        </div>
+        <div class="text-nowrap"></div>
+      </div>
+      <div class="container-fluid p-0">
+        <div class="content-info">  <div class="row">
+    <div class="col-xl-3 col-6">
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+          <span>销售额</span>
+          <span class="mt-n1 ms-2 badge bg-success-soft">今日</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="https://beikeshop.com/install/install-enter.jpg?version=1.5.3&build_date=20240124" class="d-none">
+              <div class="fs-2 lh-1 fw-bold">$0.00</div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center lh-1">
+            <span class="text-muted me-1">昨日</span>
+            <span class="text-danger">$0.00</span>
+            <span class="vr mx-2"></span>
+            <span class="text-muted me-1">较前一日</span>
+            <span class="text-success">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-6">
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+          <span>订单量</span>
+          <span class="mt-n1 ms-2 badge bg-success-soft">今日</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="fs-2 lh-1 fw-bold">0</div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center lh-1">
+            <span class="text-muted me-1">昨日</span>
+            <span class="text-success">0</span>
+            <span class="vr mx-2"></span>
+            <span class="text-muted me-1">较前一日</span>
+            <span class="text-success">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-6">
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+          <span>新增用户</span>
+          <span class="mt-n1 ms-2 badge bg-success-soft">今日</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="fs-2 lh-1 fw-bold">0</div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center lh-1">
+            <span class="text-muted me-1">昨日</span>
+            <span class="text-success">0</span>
+            <span class="vr mx-2"></span>
+            <span class="text-muted me-1">较前一日</span>
+            <span class="text-success">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-6">
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between">
+          <span>新增商品</span>
+          <span class="mt-n1 ms-2 badge bg-success-soft">今日</span>
+        </div>
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <div class="fs-2 lh-1 fw-bold">0</div>
+            </div>
+          </div>
+          <div class="mt-3 d-flex align-items-center lh-1">
+            <span class="text-muted me-1">昨日</span>
+            <span class="text-success">0</span>
+            <span class="vr mx-2"></span>
+            <span class="text-muted me-1">较前一日</span>
+            <span class="text-success">0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>订单统计</div>
+      <div class="orders-right">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-sm btn-outline-info btn-info text-white" data-type="latest_month">一个月</button>
+          <button type="button" class="btn btn-sm btn-outline-info" data-type="latest_week">一周</button>
+          <button type="button" class="btn btn-sm btn-outline-info" data-type="latest_year">一年</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <canvas id="orders-chart" height="380"></canvas>
+    </div>
+  </div>
+</div>
+
+        <div class="page-bottom-btns">
+                  </div>
+
+        <p class="text-center text-secondary mt-5" id="copyright-text">
+            <a href="http://www.manyunkeji.cn" class="ms-2" target="_blank">Shop</a>
+            v1.5.3(20240124)
+            &copy; 2024 All Rights Reserved</p>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+        const lang = {
+      file_manager: '图片管理器',
+      error_form: '请检查表单是否填写正确',
+      text_hint: '提示',
+      translate_form: '请输入要翻译的内容',
+    }
+
+    const config = {
+      beike_version: '1.5.3',
+      api_url: 'https://beikeshop.cn',
+      app_url: '',
+      has_license: true
+    }
+  </script>
+    <script>
+    const orders = document.getElementById('orders-chart').getContext('2d');
+
+    const orderGradient = orders.createLinearGradient(0, 0, 0, 380);
+          orderGradient.addColorStop(0, 'rgba(180,223,253,1)');
+          orderGradient.addColorStop(1, 'rgba(180,223,253,0)');
+
+    const amountGradient = orders.createLinearGradient(0, 0, 0, 380);
+          amountGradient.addColorStop(0, 'rgba(32,201,151,0.3)');
+          amountGradient.addColorStop(1, 'rgba(32,201,151,0)');
+
+    const latest_month = {"period":["2024-06-01","2024-06-02","2024-06-03","2024-06-04","2024-06-05","2024-06-06","2024-06-07","2024-06-08","2024-06-09","2024-06-10","2024-06-11","2024-06-12","2024-06-13","2024-06-14","2024-06-15","2024-06-16","2024-06-17","2024-06-18","2024-06-19","2024-06-20","2024-06-21","2024-06-22","2024-06-23","2024-06-24","2024-06-25","2024-06-26","2024-06-27","2024-06-28","2024-06-29","2024-06-30"],"totals":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"amounts":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+    const latest_week = {"period":["2024-06-24","2024-06-25","2024-06-26","2024-06-27","2024-06-28","2024-06-29","2024-06-30"],"totals":[0,0,0,0,0,0,0],"amounts":[0,0,0,0,0,0,0]};
+    const latest_year = {"period":["2023-07","2023-08","2023-10","2023-11","2023-12","2024-01","2024-02","2024-03","2024-04","2024-05","2024-06","2024-07"],"totals":[0,0,0,0,0,0,0,0,0,0,0,0],"amounts":[0,0,0,0,0,0,0,0,0,0,0,0]};
+
+    const ordersChart = new Chart(orders, {
+      type: 'line',
+      data: {
+        // labels: Array.from({length: 30}, (v, k) => k + 1),
+        labels: latest_month.period,
+        datasets: [
+          {
+            label: ["订单数量"],
+            fill: true,
+            backgroundColor : orderGradient, // Put the gradient here as a fill color
+            borderColor : "#4da4f9",
+            borderWidth: 2,
+            // data: Array.from({length: 30}, () => Math.floor(Math.random() * 23.7)),
+            data: latest_month.totals,
+            // borderDash: [],
+            responsive: true,
+            lineTension: 0.4,
+            datasetStrokeWidth: 3,
+            pointDotStrokeWidth: 4,
+            // pointStyle: 'rect',
+            pointHoverBorderWidth: 8,
+            // pointBorderColor: [],
+            pointBackgroundColor: '#4da4f9',
+            // pointColor : "#fff",
+            // pointStrokeColor : "#ff6c23",
+            // pointHighlightFill: "#fff",
+            // pointHighlightStroke: "#ff6c23",
+            // pointRadius: 3,
+          },
+          {
+            label: ["订单金额"],
+            fill: true,
+            backgroundColor : amountGradient,
+            borderColor : "#20c997",
+            borderWidth: 2,
+            data: latest_month.amounts,
+            responsive: true,
+            lineTension: 0.4,
+            datasetStrokeWidth: 3,
+            pointDotStrokeWidth: 4,
+            pointHoverBorderWidth: 8,
+            pointBackgroundColor: '#20c997',
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: false // Hide legend
+        },
+        interaction: {
+          mode: 'index',
+          // axis: 'x',
+          intersect: false,
+          // includeInvisible: true,
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              drawBorder: false,
+              borderDash: [3],
+            },
+          },
+          x: {
+            beginAtZero: true,
+            grid: {
+              drawBorder: false,
+              display: false
+            },
+          }
+        },
+      }
+    });
+
+    function upDate(chart, label, data) {
+      chart.data.labels = label;
+      data.forEach((e, i) => {
+        chart.data.datasets[i].data = e;
+      });
+      chart.update();
+    }
+
+    $('.orders-right .btn-group > .btn').on('click', function() {
+      const day = $(this).data('type'); // 天数
+      const labels = eval(day).period;
+      const data = [eval(day).totals, eval(day).amounts];
+      $(this).addClass('btn-info text-white').siblings().removeClass('btn-info text-white');
+      upDate(ordersChart, labels, data);
+    });
+  </script>
+</body>
+</html>
